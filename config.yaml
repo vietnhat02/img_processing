@@ -1,0 +1,41 @@
+mssv: "21139038"
+name: "Pham Viet Nhat"
+load_video: # config load video
+  path: "C:/Users/phamnhat/Desktop/computer vision/process_img/process_img/video.mp4"
+  width: 1280
+  height: 720
+  fps: 30  
+
+show_frame:
+  width: 480
+  height: 480
+  fullscreen: false  # Hiển thị toàn màn hình
+  window_name: "Processing Frame"  # Tên cửa sổ hiển thị
+
+save_frame: #config save video
+  out_path: "final_video_result.mp4"
+  res: [1280, 720] 
+  fps: 30 
+
+threshold:
+  low: 230                   # Ngưỡng thấp
+  high: 255                   # Giá trị tối đa sau ngưỡng
+  type:                       # Các loại threshold
+    - THRESH_BINARY           # Thực hiện kiểu threshold nhị phân
+    - THRESH_OTSU             # Áp dụng Otsu's Thresholding (nếu cần)
+  arena_size: 2000            # Diện tích tối thiểu của đối tượng để giữ lại
+  iterations_open: 2          # Số lần giãn nở (dilate) để lấp đầy
+  iterations_close: 5
+  color: 255                  # Màu sắc vẽ đối tượng (255 là trắng)
+  thickness: -1               # Độ dày khi vẽ (−1 để tô đầy)
+  kernel_size: [5, 5]         # Kích thước kernel cho giãn nở và xói mòn
+
+
+blur:
+  denoise_kernel_size: 31
+  sigma: 1.5
+
+
+counter:
+  circle: 0.71  
+  square: 0.86
